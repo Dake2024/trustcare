@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustCare — цифровой документооборот</title>
+  <link rel="icon" type="image/png" href="assets/icons/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="logo">
+          <img src="assets/icons/TM_logo.svg" alt="TrustMe" height="36" />
+        </a>
+        <nav class="nav">
+
+          <a href="#pricing" class="nav__link">Тарифы</a>
+          <a href="#advantages" class="nav__link">Преимущества</a>
+          <li class="dropdown">
+            <a class=dropdown-item href="#">Наши продукты</a>
+
+            <ul class="dropdown-menu">
+              <li><a class=dropdown-item href="https://trustme.kz/contract/">TrustContract</a></li>
+              <li><a class=dropdown-item href="https://trustme.kz/trustedo/">TrustЭДO</a></li>
+              <li><a class=dropdown-item href="https://trustme.kz/accounting/">TrustAccounting</a></li>
+              <li><a class=dropdown-item href="https://trustmetoken.com/">TrustToken</a></li>
+            </ul>
+          </li>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+        <div class="header__actions">
+          <a href="tel:+77777777777" class="header__phone btn open-modal">+7 777 777 7777</a>
+        </div>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#">Наши продукты</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#contact">Контакты</a>
+      <a href="tel:+77777777777" class="mobile-menu__phone btn open-modal">+7 777 777 7777</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            TrustCare —<br>
+            подписание договоров и согласий<br>
+            клиентов <span class="hero__title-accent">за 1 минуту</span>
+          </h1>
+          <div class="hero__tags">
+            <span class="hero__tag"> SMS подписание</span>
+            <span class="hero__tag"> ЭЦП</span>
+            <span class="hero__tag"> FaceID верификация</span>
+            <span class="hero__tag"> Интеграции</span>
+          </div>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn-primary open-modal">Оставить заявку</a>
+            <a href="#pricing" class="btn btn-outline">Ознакомиться с тарифами</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__visual-inner">
+            <img src="assets/img/tablet.png" alt="TrustCare tablet">
+          </div>
+        </div>
+      </div>
+      <svg class="hero__bg-line" viewBox="0 0 1440 260" preserveAspectRatio="none">
+
+        <path d="
+        M -80 60
+        C 200 -60 420 60 640 140
+        C 860 220 1080 300 1280 240
+        C 1400 200 1500 160 1580 110
+        " />
+      </svg>
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__number">3 000+</div>
+          <div class="stat__label">компаний</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">1,5 млн+</div>
+          <div class="stat__label">документов подписано</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">1 млн+</div>
+          <div class="stat__label">физ. лиц воспользовались нашим сервисом</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- INDUSTRIES — отрасли -->
+  <section class="industries">
+    <div class="container">
+      <div class="industries__grid">
+        <a href="#" class="industry-card open-modal">
+          <span class="industry-card__icon"><img src="assets/icons/health.svg" alt=""></span>
+          <span class="industry-card__arrow"><img src="assets/icons/arrow.svg" alt="↗"></span>
+          <span class="industry-card__name">Здравоохранение</span>
+        </a>
+        <a href="#" class="industry-card open-modal">
+          <span class="industry-card__icon"><img src="assets/icons/car.svg" alt=""></span>
+          <span class="industry-card__arrow"><img src="assets/icons/arrow.svg" alt="↗"></span>
+          <span class="industry-card__name">Автосалоны</span>
+        </a>
+        <a href="#" class="industry-card open-modal">
+          <span class="industry-card__icon"><img src="assets/icons/hotel.svg" alt=""></span>
+          <span class="industry-card__arrow"><img src="assets/icons/arrow.svg" alt="↗"></span>
+          <span class="industry-card__name">Сфера гостеприимства</span>
+        </a>
+        <a href="#" class="industry-card open-modal">
+          <span class="industry-card__icon"><img src="assets/icons/cosmetology.svg" alt=""></span>
+          <span class="industry-card__arrow"><img src="assets/icons/arrow.svg" alt="↗"></span>
+          <span class="industry-card__name">Косметология</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ADVANTAGES — ключевые преимущества -->
+  <section class="advantages" id="advantages">
+    <div class="container">
+      <h2 class="advantages__title">НАШИ КЛЮЧЕВЫЕ ПРЕИМУЩЕСТВА</h2>
+      <div class="advantages__grid">
+
+        <!-- Левая карточка с фото -->
+        <div class="adv-card adv-card--photo">
+          <div class="adv-card__photo-placeholder"><img src="assets/img/econ.png" alt=""></div>
+          <div class="adv-card__bottom">
+            <div class="adv-card__label">ЭКОНОМИЯ</div>
+            <div class="adv-card__text">средств на бумажный документооборот
+              <span class="adv-card__badge">до 30%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Центральная карточка с иконками -->
+        <div class="adv-card adv-card--center">
+          <div class="adv-item">
+            <div class="adv-item__icon"><img src="assets/icons/law.svg" alt=""></div>
+            <div class="adv-item__title">ЛЕГИТИМНОСТЬ</div>
+            <div class="adv-item__text">SMS-подписание и eGovMobile ЭЦП юридически признаны — статья <strong>152 ГК
+                РК</strong></div>
+          </div>
+          <hr class="adv-divider" />
+          <div class="adv-item">
+            <div class="adv-item__icon"><img src="assets/icons/time.svg" alt=""></div>
+            <div class="adv-item__title">ВРЕМЯ СОТРУДНИКОВ</div>
+            <div class="adv-item__text">Сокращает время оформления и ускоряет подписание документов клиентами</div>
+          </div>
+        </div>
+
+        <!-- Правая карточка с фото -->
+        <div class="adv-card adv-card--photo">
+          <div class="adv-card__photo-placeholder"><img src="assets/img/safety.png" alt=""></div>
+          <div class="adv-card__bottom">
+            <div class="adv-card__label">СОХРАННОСТЬ</div>
+            <div class="adv-card__text">надёжная защита и сохранность подписанных документов</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2 class="how__title">КАК ЭТО РАБОТАЕТ</h2>
+      <p class="how__subtitle">Простой клиентский путь — 3 шага, и документ подписан</p>
+      <div class="how__steps">
+        <div class="step-card">
+          <div class="step-card__header">
+            <div class="step-card__num">01</div>
+            <h3 class="step-card__title">Поиск нужного документа по ИИН клиента</h3>
+          </div>
+          <div class="step-card__visual"><img src="assets/img/IIN.png" alt=""></div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__header">
+            <div class="step-card__num">02</div>
+            <h3 class="step-card__title">Выбор способа подписания и отправка документа на телефон</h3>
+          </div>
+          <div class="step-card__visual"><img src="assets/img/sign.png" alt=""></div>
+        </div>
+        <div class="step-card">
+          <div class="step-card__header">
+            <div class="step-card__num">03</div>
+            <h3 class="step-card__title">Ввод SMS-кода для подписания договора</h3>
+          </div>
+          <div class="step-card__visual"><img src="assets/img/checkphone.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PRICING — тарифы -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="pricing__title">ТАРИФЫ</h2>
+      <div class="pricing__grid">
+
+        <div class="pricing-card">
+          <div class="pricing-card__top">
+            <div class="pricing-card__name">МЕСЯЧНЫЙ</div>
+            <a href="#contact" class="btn btn-primary btn--sm open-modal">ПОДКЛЮЧИТЬ ТАРИФ</a>
+          </div>
+          <p class="pricing-card__desc">Оптимальный пакет для небольших объёмов документооборота с фиксированной ценой
+            за подписание</p>
+          <div class="pricing-card__price"><span class="pricing-card__num">130</span> ₸ /документ</div>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">✓ Интеграция с БМГ</li>
+            <li class="pricing-card__feature">✓ Подписание через eGov Mobile</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card__top">
+            <div class="pricing-card__name">ГОДОВОЙ</div>
+            <a href="#contact" class="btn btn-primary btn--sm open-modal">ПОДКЛЮЧИТЬ ТАРИФ</a>
+          </div>
+          <p class="pricing-card__desc">Всё что входит в месячный тариф, а также публичное API + <strong>скидка
+              30%</strong> со снижением стоимости при увеличении объема документов на подпись</p>
+          <div class="pricing-card__volumes">
+            <button type="button" class="pricing-vol is-active" data-price="91">6000</button>
+            <button type="button" class="pricing-vol" data-price="89">12 000</button>
+            <button type="button" class="pricing-vol" data-price="87">20 000</button>
+            <button type="button" class="pricing-vol" data-price="85">25 000</button>
+          </div>
+          <div class="pricing-card__price"><span class="pricing-card__num">91</span> ₸ /документ</div>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">✓ Публичное API</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pricing-enterprise">
+        <div class="pricing-enterprise__left">
+          <div class="pricing-enterprise__name">ENTERPRISE</div>
+          <div class="pricing-enterprise__desc">
+            Индивидуальный пересмотр тарифа и доработок при объёмах
+            <span class="pricing-enterprise__badge">30 000 +</span>
+            документов в год
+          </div>
+        </div>
+        <a href="#contact" class="pricing-enterprise__button btn open-modal">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CLINICS — клиники с нашей системой -->
+  <section class="clinics">
+    <div class="container">
+      <h2 class="clinics__title">КЛИНИКИ С НАШЕЙ СИСТЕМОЙ</h2>
+      <div class="clinics__grid">
+        <div class="clinic-card">
+          <div class="clinic-card__logo"><img src="assets/img/kidssmile.png" alt="Kids Smile"></div>
+          <div class="clinic-card__name">Kids Smile</div>
+          <div class="clinic-card__type">Детская стоматология</div>
+        </div>
+        <div class="clinic-card">
+          <div class="clinic-card__logo"><img src="assets/img/eyemax.png" alt="Eyemax"></div>
+          <div class="clinic-card__name">Eyemax Глазная Клиника Коновалова</div>
+          <div class="clinic-card__type">Глазная клиника</div>
+        </div>
+        <div class="clinic-card">
+          <div class="clinic-card__logo"><img src="assets/img/docdent.png" alt="Doctor Dent"></div>
+          <div class="clinic-card__name">Doctor Dent</div>
+          <div class="clinic-card__type">Стоматология</div>
+        </div>
+        <div class="clinic-card">
+          <div class="clinic-card__logo"><img src="assets/img/daru.png" alt="Daru Clinic"></div>
+          <div class="clinic-card__name">Daru Clinic</div>
+          <div class="clinic-card__type">Медицинский центр</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CLIENTS MARQUEE — бегущая строка -->
+  <section class="clients-marquee">
+    <div class="container">
+      <h2 class="clients-marquee__title">НАШИ КЛИЕНТЫ</h2>
+    </div>
+    <!-- Верхняя строка — движется вправо -->
+    <div class="marquee marquee--right">
+      <div class="marquee__track">
+        <span class="marquee__item"><img src="assets/img/sana.png" alt="SANA"></span>
+        <span class="marquee__item"><img src="assets/img/shym.png" alt="Shymbulak"></span>
+        <span class="marquee__item"><img src="assets/img/baybee.png" alt="Baybee"></span>
+        <span class="marquee__item"><img src="assets/img/marwin.png" alt="Marwin"></span>
+        <span class="marquee__item"><img src="assets/img/allur.png" alt="Allur"></span>
+        <span class="marquee__item"><img src="assets/img/merc.png" alt="Mercedes-Benz"></span>
+        <span class="marquee__item"><img src="assets/img/metry.png" alt="Metry.kz"></span>
+        <span class="marquee__item"><img src="assets/img/zerde.png" alt="Zerde"></span>
+        <span class="marquee__item"><img src="assets/img/sensata.png" alt="SENSATA"></span>
+        <!-- дублируем для бесшовного цикла -->
+        <span class="marquee__item"><img src="assets/img/sana.png" alt="SANA"></span>
+        <span class="marquee__item"><img src="assets/img/shym.png" alt="Shymbulak"></span>
+        <span class="marquee__item"><img src="assets/img/baybee.png" alt="Baybee"></span>
+        <span class="marquee__item"><img src="assets/img/marwin.png" alt="Marwin"></span>
+        <span class="marquee__item"><img src="assets/img/allur.png" alt="Allur"></span>
+        <span class="marquee__item"><img src="assets/img/merc.png" alt="Mercedes-Benz"></span>
+        <span class="marquee__item"><img src="assets/img/metry.png" alt="Metry.kz"></span>
+        <span class="marquee__item"><img src="assets/img/zerde.png" alt="Zerde"></span>
+        <span class="marquee__item"><img src="assets/img/sensata.png" alt="SENSATA"></span>
+      </div>
+    </div>
+    <!-- Нижняя строка — движется влево -->
+    <div class="marquee marquee--left">
+      <div class="marquee__track">
+        <span class="marquee__item"><img src="assets/img/ozge.png" alt="ÖZGE"></span>
+        <span class="marquee__item"><img src="assets/img/ata.png" alt="Ata Travel"></span>
+        <span class="marquee__item"><img src="assets/img/venplur.png" alt="Venplur"></span>
+        <span class="marquee__item"><img src="assets/img/aulet.png" alt="AULET"></span>
+        <span class="marquee__item"><img src="assets/img/toddler.png" alt="TODDLER"></span>
+        <span class="marquee__item"><img src="assets/img/mebel.png" alt="Mebel"></span>
+        <span class="marquee__item"><img src="assets/img/volsheb.png" alt="Volshebniki"></span>
+        <span class="marquee__item"><img src="assets/img/cupio.png" alt="Cupio"></span>
+        <span class="marquee__item"><img src="assets/img/ozge.png" alt="ÖZGE"></span>
+        <span class="marquee__item"><img src="assets/img/ata.png" alt="Ata Travel"></span>
+        <span class="marquee__item"><img src="assets/img/venplur.png" alt="Venplur"></span>
+        <span class="marquee__item"><img src="assets/img/aulet.png" alt="AULET"></span>
+        <span class="marquee__item"><img src="assets/img/toddler.png" alt="TODDLER"></span>
+        <span class="marquee__item"><img src="assets/img/mebel.png" alt="Mebel"></span>
+        <span class="marquee__item"><img src="assets/img/volsheb.png" alt="Volshebniki"></span>
+        <span class="marquee__item"><img src="assets/img/cupio.png" alt="Cupio"></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- REVIEWS — отзывы клиентов -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="reviews__title">ОТЗЫВЫ КЛИЕНТОВ</h2>
+      <div class="reviews__inner">
+        <div class="reviews__content">
+          <div class="review" id="currentReview">
+            <div class="review__company">Doctor Dent</div>
+            <div class="review__author">Дарьяна, администратор клиники Doctor Dent</div>
+            <p class="review__text">Перешли с бумажных договоров на TrustMe — теперь все подписываем онлайн. Процесс
+              стал быстрее и удобнее для сотрудников и пациентов. Во время проверки сервис сильно выручил: все документы
+              были в порядке и под рукой. Очень довольны переходом на цифровой формат.</p>
+          </div>
+          <div class="reviews__nav">
+            <a href="#contact" class="btn btn-primary open-modal">Начать работу ›</a>
+            <button class="reviews__arrow" id="reviewPrev">←</button>
+            <button class="reviews__arrow" id="reviewNext">→</button>
+          </div>
+        </div>
+        <div class="reviews__video">
+          <div class="reviews__video-placeholder">
+            <iframe id="reviewVideo"
+              src="https://www.youtube.com/embed/EJuar0wvemA?list=PLw57dgFC5TGunmOEX72rTPBFkhntr-oVf"
+              title="Видео-отзыв" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__tabs">
+        <button class="reviews__tab is-active" type="button" data-tab="big">Крупные компании</button>
+        <button class="reviews__tab" type="button" data-tab="education">Учебные центры</button>
+        <button class="reviews__tab" type="button" data-tab="travel">Турагентства</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="faq__title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+      <ul class="faq__list">
+        <li class="accordion-item">
+          <button class="accordion-trigger">
+            Это легитимно?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Да, в TrustCare есть подписание через SMS и EgobMobile. SMS подписание
+              является легитимным по Закону РК «Об электронном документе и электронной цифровой подписи» и ст. 152
+              Гражданского кодекса РК, допускающей электронные сделки</div>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <button class="accordion-trigger">
+            Есть ли API?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Да. TrustCare поддерживает интеграции через API, чтобы ваш процесс был
+              синхронизирован с вашей действующей системой.</div>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <button class="accordion-trigger">
+            Сколько времени занимает подписание?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">В среднем от 30 секунд до 2 минут — зависит от объёма документа и сценария.
+            </div>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <button class="accordion-trigger">
+            Есть ли скидка при больших объёмах?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Да. Чем больше документов/подписаний — тем ниже цена за 1 документ.</div>
+          </div>
+        </li>
+        <li class="accordion-item">
+          <button class="accordion-trigger">
+            Есть ли поддержка?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Да. Мы сопровождаем внедрение, а также в стоимость входит техническая
+              поддержка.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="assets/icons/TM_LogoWhite.svg" alt="TrustMe" height="36" /></div>
+        </div>
+        <div>
+          <div class="footer-col__title">Меню</div>
+          <ul class="footer-col__list">
+            <li><a href="#">Наши продукты</a></li>
+            <li><a href="#pricing">Тарифы</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">Продукты</div>
+          <ul class="footer-col__list">
+            <li><a href="https://trustme.kz/contract/">TrustContract</a></li>
+            <li><a href="https://trustme.kz/trustedo/">TrustЭДO</a></li>
+            <li><a href="https://trustme.kz/accounting/">TrustAccounting</a></li>
+            <li><a href="https://trustmetoken.com/">TrustToken</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">Контакты</div>
+          <div class="footer-contact">
+            <div class="footer-contact__item">📍 г. Астана. Улица Достык, 13</div>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@trustme.kz" class="footer-contact__item">✉️
+              info@trustme.kz</a>
+            <div class="footer-contact__item">🎧 Служба тех.поддержки: +7 (707)-870-19-03</div>
+            <div class="footer-contact__item">📞 Отдел продаж: +7 (707)-870-19-01</div>
+          </div>
+        </div>
+        <div>
+          <ul class="footer-legal">
+            <li><a href="https://trustme.kz/contract/privacypolicy">Политика конфиденциальности</a></li>
+            <li><a href="https://trustme.kz/contract/termofuse">Абонентское соглашение</a></li>
+            <li><a href="https://trustme.kz/contract/serviceAcceptablePolicy">Публичная оферта</a></li>
+          </ul>
+          <div class="footer-social__title">Мы в соцсетях</div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/trustmekz" class="social-link" aria-label="Facebook"><img
+                src="assets/icons/facebook.svg" alt="" /></a>
+            <a href="https://www.instagram.com/trustme.kz/" class="social-link" aria-label="Instagram"><img
+                src="assets/icons/inst.svg" alt="" /></a>
+            <a href="https://www.youtube.com/@trustmekz" class="social-link" aria-label="YouTube"><img
+                src="assets/icons/youtube.svg" alt="" /></a>
+            <a href="https://trustme.kz/contract/" class="social-link" aria-label="TikTok"><img
+                src="assets/icons/tiktok.svg" alt="" /></a>
+          </div>
+          <div class="footer__copy">Все права защищены</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal__overlay"></div>
+
+    <div class="modal__window">
+      <div class="modal__header">
+        <b>Оставьте заявку</b>
+      </div>
+
+      <form class="modal__form">
+
+        <label>
+          Имя *
+          <input type="text" required>
+        </label>
+
+        <label>
+          Телефон *
+          <input type="text" required>
+        </label>
+
+        <label>
+          Название компании *
+          <input type="text" required>
+        </label>
+
+        <label>
+          Должность
+          <input type="text">
+        </label>
+
+        <button type="submit" class="modal__submit">
+          Отправить
+        </button>
+
+      </form>
+
+      <button class="modal__close" id="modalClose">×</button>
+
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
