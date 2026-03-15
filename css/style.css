@@ -96,7 +96,6 @@ ul {
   background: var(--color-primary-dark);
 }
 
-/* Кнопка с обводкой — как на дизайне: скруглённая, бирюзовый текст и рамка */
 .btn-outline {
   background: transparent;
   color: var(--color-primary);
@@ -284,10 +283,8 @@ li {
 }
 
 /* ======================================================
-   HERO — полная перезапись под дизайн
+   HERO
 ====================================================== */
-
-/* Секция без overflow clip — овал должен выходить за края */
 .hero {
   position: relative;
   padding: 52px 0 0;
@@ -339,7 +336,6 @@ li {
   color: var(--color-primary);
 }
 
-/* Теги — точка с glow вокруг */
 .hero__tags {
   display: flex;
   flex-wrap: wrap;
@@ -369,14 +365,12 @@ li {
     0 0 16px rgba(27, 201, 195, 0.18);
 }
 
-/* Кнопки */
 .hero__actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-/* Правая часть — позиционирование относительно для овала */
 .hero__visual {
   position: relative;
   min-height: 520px;
@@ -384,7 +378,6 @@ li {
   z-index: 2;
 }
 
-/* Планшет */
 .hero__visual-inner {
   position: absolute;
   z-index: 2;
@@ -407,7 +400,6 @@ li {
   display: block;
 }
 
-/* Статистика — числа без разделителей, волна на фоне */
 .hero__stats {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -464,7 +456,7 @@ li {
 }
 
 /* ======================================================
-   INDUSTRIES — карточки отраслей с правильным градиентом
+   INDUSTRIES
 ====================================================== */
 .industries {
   padding: 34px 0 56px;
@@ -495,7 +487,6 @@ li {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 .industry-card:hover {
   box-shadow: 0 10px 26px rgba(10, 186, 181, 0.10);
@@ -924,7 +915,6 @@ li {
   color: var(--color-text-muted);
   font-size: 12px;
   margin-bottom: 26px;
-
 }
 
 .clinic-card__name {
@@ -1328,7 +1318,9 @@ li {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* MODAL */
+/* ======================================================
+   MODAL
+====================================================== */
 .modal {
   position: fixed;
   inset: 0;
@@ -1537,21 +1529,50 @@ li {
 
   .hero__inner {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__content {
+    order: 1;
+    padding-top: 40px;
   }
 
   .hero__visual {
-    display: none;
+    order: 2;
+    display: block;
+    min-height: auto;
+    height: auto;
+    margin: 28px auto 0;
+    width: 75%;
+    max-width: 300px;
+  }
+
+  .hero__visual-inner {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    padding: 0;
   }
 
   .hero__stats {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 32px 0 40px;
+    order: 3;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 0;
     left: 0;
+    padding: 32px 0 40px;
     text-align: center;
   }
 
+  .stat__number {
+    font-size: 28px;
+  }
+
   .stat__label {
+    font-size: 13px;
     max-width: 100%;
   }
 
