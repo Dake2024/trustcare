@@ -1586,6 +1586,10 @@ li {
     align-items: flex-start;
   }
 
+  .pricing-enterprise__content {
+    gap: 12px;
+  }
+
   .footer__top {
     grid-template-columns: 1fr 1fr;
   }
