@@ -847,9 +847,7 @@ li {
 }
 
 .pricing-enterprise__badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   background: #ffffff;
   color: var(--color-primary);
   font-size: 18px;
@@ -857,8 +855,8 @@ li {
   line-height: 1;
   padding: 10px 14px;
   border-radius: 10px;
-  margin: 0 6px;
-  vertical-align: middle;
+  margin: 2px 4px;
+  vertical-align: baseline;
 }
 
 .pricing-enterprise__button {
@@ -1559,11 +1557,12 @@ li {
 
   .hero__stats {
     order: 3;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
     left: 0;
-    padding: 32px 0 40px;
+    padding: 32px 16px 40px;
     text-align: center;
   }
 
@@ -1577,7 +1576,15 @@ li {
   }
 
   .hero__actions {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero__actions .btn {
+    flex: 1;
+    min-width: 200px;
+    max-width: 340px;
+    text-align: center;
   }
 
   .industries__grid {
@@ -1606,7 +1613,14 @@ li {
 
   .pricing-enterprise {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .pricing-enterprise__button {
+    align-self: center;
+    text-align: center;
+    white-space: normal;
+    width: fit-content;
   }
 
   .pricing-enterprise__content {
@@ -1615,6 +1629,29 @@ li {
 
   .footer__top {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero__stats {
+    padding: 24px 16px 32px;
+  }
+
+  .stat__number {
+    font-size: 24px;
+  }
+
+  .pricing-enterprise__desc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pricing-enterprise__badge {
+    display: inline-flex;
+    margin: 0;
+    flex-shrink: 0;
   }
 }
 

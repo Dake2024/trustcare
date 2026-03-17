@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- FAQ Аккордеон ----
-  // Клик закрывает открытый или открывает закрытый
   const accordionTriggers = document.querySelectorAll('.accordion-trigger');
   accordionTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
@@ -30,20 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const volBtns = document.querySelectorAll('.pricing-vol');
   volBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Убираем активный только у кнопок в той же карточке
       const card = btn.closest('.pricing-card');
       card.querySelectorAll('.pricing-vol').forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
+      const price = card.querySelector('.pricing-card__num');
+      if (price) price.textContent = btn.dataset.price;
     });
   });
-  const reviewsData = [
 
-  ];
-
-  // ---- Стрелки в отзывах ----
-  // Данные отзывов — потом заменить на реальные
-
-
+  // ---- Отзывы ----
   const reviewsByTab = {
     big: [
       {
@@ -61,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         company: 'Стоматология Tiara',
         author: '',
-        text: 'С TrustMe мы работаем с 2023 года.В один-два клика мы составляем договор с пациентом, где всё приходит сообщением онлайн на телефон пациента. Он может сразу же ознакомиться с ним и подписать путём сообщения либо через eGov. Всё доступно, всё понятно. Это облегчило нам работу. Спасибо вам, что вы есть.',
+        text: 'С TrustMe мы работаем с 2023 года. В один-два клика мы составляем договор с пациентом, где всё приходит сообщением онлайн на телефон пациента. Он может сразу же ознакомиться с ним и подписать путём сообщения либо через eGov. Всё доступно, всё понятно. Это облегчило нам работу. Спасибо вам, что вы есть.',
         video: 'https://www.youtube.com/embed/3ticLsHN-Fs?rel=0'
       },
       {
@@ -71,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         video: 'https://www.youtube.com/embed/oQeVQlDBPZA?rel=0'
       },
     ],
-
     education: [
       {
         company: 'Quantum Tech School',
@@ -86,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         video: 'https://www.youtube.com/embed/Xbh_EkugSQw?rel=0'
       },
     ],
-
     travel: [
       {
         company: 'AtaTravel',
@@ -111,15 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const r = currentList[currentReview];
 
     document.getElementById('currentReview').innerHTML = `
-    <div class="review__company">${r.company}</div>
-    ${r.author ? `<div class="review__author">${r.author}</div>` : ''}
-    <p class="review__text">${r.text}</p>
-  `;
+      <div class="review__company">${r.company}</div>
+      ${r.author ? `<div class="review__author">${r.author}</div>` : ''}
+      <p class="review__text">${r.text}</p>
+    `;
 
     const videoFrame = document.getElementById('reviewVideo');
-    if (videoFrame) {
-      videoFrame.src = r.video;
-    }
+    if (videoFrame) videoFrame.src = r.video;
   }
 
   const prevBtn = document.getElementById('reviewPrev');
@@ -140,12 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const tabs = document.querySelectorAll('.reviews__tab');
-
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
-
       currentTab = tab.dataset.tab;
       currentReview = 0;
       renderReview();
@@ -154,46 +142,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderReview();
 
+  // ---- Маска телефона ----
+  const phoneInput = document.getElementById('phoneInput');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function (e) {
+      let digits = this.value.replace(/\D/g, '');
 
-  const modal = document.getElementById("modal");
-  const modalClose = document.getElementById("modalClose");
+      // Если начинается с 8, заменяем на 7
+      if (digits.startsWith('8')) digits = '7' + digits.slice(1);
+      // Если начинается не с 7, принудительно добавляем
+      if (digits.length > 0 && digits[0] !== '7') digits = '7' + digits;
 
-  document.querySelectorAll(".open-modal").forEach(btn => {
-    btn.addEventListener("click", (e) => {
+      // Обрезаем до 11 цифр (7 + 10)
+      digits = digits.slice(0, 11);
+
+      let formatted = '';
+      if (digits.length > 0) formatted = '+7';
+      if (digits.length > 1) formatted += ' (' + digits.slice(1, 4);
+      if (digits.length >= 4) formatted += ')';
+      if (digits.length > 4) formatted += ' ' + digits.slice(4, 7);
+      if (digits.length > 7) formatted += '-' + digits.slice(7, 9);
+      if (digits.length > 9) formatted += '-' + digits.slice(9, 11);
+
+      this.value = formatted;
+    });
+
+    phoneInput.addEventListener('keydown', function (e) {
+      // Разрешаем: Backspace, Delete, Tab, Escape, стрелки
+      if ([8, 9, 27, 46, 37, 38, 39, 40].includes(e.keyCode)) return;
+      // Разрешаем Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+      if ((e.ctrlKey || e.metaKey) && [65, 67, 86, 88].includes(e.keyCode)) return;
+      // Блокируем всё, кроме цифр (клавиатура и numpad)
+      if ((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+      }
+    });
+
+    phoneInput.addEventListener('focus', function () {
+      if (!this.value) this.value = '+7 (';
+    });
+
+    phoneInput.addEventListener('blur', function () {
+      // Очищаем, если введено меньше 18 символов (неполный номер)
+      const digits = this.value.replace(/\D/g, '');
+      if (digits.length < 11) this.value = '';
+    });
+  }
+
+  // ---- Модальное окно ----
+  const modal = document.getElementById('modal');
+  const modalClose = document.getElementById('modalClose');
+
+  document.querySelectorAll('.open-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add("show");
+      modal.classList.add('show');
     });
   });
 
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("show");
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('show');
   });
 
-  modal.addEventListener("click", (e) => {
-    if (e.target.classList.contains("modal__overlay")) {
-      modal.classList.remove("show");
+  modal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal__overlay')) {
+      modal.classList.remove('show');
     }
   });
 
-}); // закрывает DOMContentLoaded
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".pricing-vol");
+  // ---- Отправка формы ----
+  const form = document.querySelector('.modal__form');
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const inputs = this.querySelectorAll('input');
+    const btn = this.querySelector('.modal__submit');
 
-  console.log("buttons found:", buttons.length);
+    btn.textContent = 'Отправляем...';
+    btn.disabled = true;
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const card = btn.closest(".pricing-card");
-      const price = card.querySelector(".pricing-card__num");
-
-      card.querySelectorAll(".pricing-vol").forEach((b) => {
-        b.classList.remove("is-active");
+    try {
+      await fetch('http://localhost:8000/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: inputs[0].value,
+          phone: inputs[1].value,
+          company: inputs[2].value,
+          position: inputs[3].value,
+        })
       });
 
-      btn.classList.add("is-active");
-      price.textContent = btn.dataset.price;
+      btn.textContent = 'Заявка отправлена!';
 
-      console.log("new price:", btn.dataset.price);
-    });
+      setTimeout(() => {
+        modal.classList.remove('show');
+        btn.textContent = 'Отправить заявку';
+        btn.disabled = false;
+        form.reset();
+      }, 2000);
+
+    } catch {
+      btn.textContent = '❌ Ошибка, попробуйте снова';
+      btn.disabled = false;
+    }
   });
+
 });
