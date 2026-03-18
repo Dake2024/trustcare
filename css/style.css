@@ -342,6 +342,13 @@ li {
   margin-bottom: 36px;
 }
 
+.hero__visual-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 440px;
+}
+
 .hero__tag {
   position: relative;
   font-size: 14px;
